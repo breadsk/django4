@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generos Crud</title>
+</head>
+<body>
+    
+    <h1>Generos List</h1>
+
+    <button type="button">
+        <a href="{% url 'generosAdd' %}">Agregar</a>
+    </button>
+
+    <div id="idMensajes">
+        {% if mensaje %}
+            {{mensaje}}
+        {% endif %}
+    </div>
+
+    <table>
+        {% if generos %}
+            <th>Genero</th>
+            <th>Eliminar</th>
+            <th>Modificar</th>
+            {% for genero in generos %}
+                <tr>
+                    <td>{{genero.genero}}</td>
+                    <td><a href="{% url 'generos_del' pk=genero.id_genero %}">Eliminar</a></td>
+                    <td><a href="{% url 'generos_edit' pk=genero.id_genero %}">Modificar</a></td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+
+</body>
+</html>
