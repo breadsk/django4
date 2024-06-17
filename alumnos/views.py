@@ -4,7 +4,8 @@ from .models import Genero , Alumno
 from .forms import GeneroForm
 
 # Create your views here.
-def index(request):    
+def index(request):
+    request.session["usuario"]="profe"
     context = {}
     return render(request,"alumnos/index.html",context)
 

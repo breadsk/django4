@@ -1,13 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class Genero(models.Model):
-    id_genero = models.AutoField(db_column="id_genero",primary_key=True)
-    genero = models.CharField(max_length=50,blank=False,null=False)
-
-    def __str__(self):
-        return str(self.genero)
-    
 class Alumno(models.Model):
     rut = models.CharField(primary_key=True,max_length=10)
     nombre = models.CharField(max_length=50)
@@ -22,6 +15,3 @@ class Alumno(models.Model):
 
     def __str__(self):
         return str(self.nombre) + " " + str(self.apellido_paterno) + " " + str(self.apellido_materno)
-
-    class Meta:
-        ordering=['rut']
