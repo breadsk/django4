@@ -1,6 +1,5 @@
 from django.db import models
 
-from alumnos.models import Genero
 # Create your models here.
 class Docente(models.Model):
     rut = models.CharField(primary_key=True,max_length=10)
