@@ -36,9 +36,14 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                Docentes
+                {% if user.is_authenticated %}
+                  {{user.username}}
+                {% else %}
+                  <a href="{% url 'login' %}">Login</a>
+                {% endif %}
               </a>
               <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesion</a>
                 <a class="dropdown-item" href="#">Alumnos</a>
                 <a class="dropdown-item" href="#">Docentes</a>
               </div>
@@ -65,7 +70,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 
 {% block javascript %}
-
+      
 {% endblock %}
 
 <script>

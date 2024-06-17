@@ -2,7 +2,7 @@ from django.db import models
 
 from alumnos.models import Genero
 # Create your models here.
-class Docente(models.Models):
+class Docente(models.Model):
     rut = models.CharField(primary_key=True,max_length=10)
     nombre = models.CharField(max_length=50)
     apellido_paterno = models.CharField(max_length=50)

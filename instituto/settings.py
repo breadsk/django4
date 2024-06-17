@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'alumnos'
+    'alumnos',
+    'administrador',
+    'docentes'
 ]
 
 MIDDLEWARE = [
@@ -69,6 +71,7 @@ TEMPLATES = [
 ]
 
 LOGIN_REDIRECT_URL = "menu"
+LOGOUT_REDIRECT_URL = "home"
 
 WSGI_APPLICATION = 'instituto.wsgi.application'
 
